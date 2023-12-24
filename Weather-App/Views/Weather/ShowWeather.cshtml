@@ -1,0 +1,12 @@
+﻿@model Weather_App.Models.Weather
+@{
+    ViewBag.Title = "ShowWeather";
+}
+
+<h2>Weather Information for @Model.City</h2>
+
+@if (Model.Temperature != 0 || string.IsNullOrEmpty(Model.Description))
+{
+<p>Temperature is : @Model.Temperature</p>
+}
+

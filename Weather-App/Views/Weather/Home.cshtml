@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+
+@using (Html.BeginForm("ShowWeather", "Weather", FormMethod.Get, new { @class = "EditForm" }))
+{
+    <label for="city">Enter City Name:</label>
+    <input type="text" id="city" name="city" required />
+    <button type="submit">Get Weather</button>
+
+}

@@ -8,7 +8,7 @@ using Weather_App.Models;
 using Weather_App.DTOs;
 using Newtonsoft.Json;
 using System.Configuration;
-using Microsoft.Extensions.Configuration;
+
 
 namespace Weather_App.Services
 {
@@ -17,10 +17,10 @@ namespace Weather_App.Services
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;
 
-        public WeatherService(HttpClient httpClient, IConfiguration configuration)
+        public WeatherService(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _apiKey = configuration["OpenWeatherMap:ApiKey"]; // Ensure you have this in your appsettings.json
+            _apiKey = ConfigurationManager.AppSettings["OpenWeatherMapApiKey"];
         }
         public async Task<Weather> GetWeatherAsync(string city)
         {
